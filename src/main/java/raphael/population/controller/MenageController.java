@@ -17,8 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/menages")
 
-
-
+//Autorise le backend à recevoir les reque
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.OPTIONS})
 
 public class MenageController {
 
