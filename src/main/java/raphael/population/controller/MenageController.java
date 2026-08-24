@@ -18,8 +18,7 @@ import java.util.List;
 @RequestMapping("/api/menages")
 
 //Autorise le backend à recevoir les reque
-@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.OPTIONS})
-
+@CrossOrigin(origins = "*") //  AJOUTE CETTE LIGNE
 
 
 public class MenageController {
