@@ -52,7 +52,7 @@ public class MenageServiceImpl implements MenageService {
         menageExistant.setAgeMoyen(requestDTO.getAgeMoyen());
         menageExistant.setNombrePersonnes(requestDTO.getNombrePersonnes());
         menageExistant.setTypeLogement(requestDTO.getTypeLogement());
-        menageExistant.setRevenuMensuel(requestDTO.getRevenuMensuel());
+
 
         Menage menageMisAJour = menageRepository.save(menageExistant);
         return menageMapper.toDto(menageMisAJour);
@@ -90,7 +90,7 @@ public class MenageServiceImpl implements MenageService {
         long totalPopulation = menages.stream().mapToLong(Menage::getNombrePersonnes).sum();
         double tailleMoyenne = (double) totalPopulation / totalMenages;
         double ageMoyenGlobal = menages.stream().mapToInt(Menage::getAgeMoyen).average().orElse(0.0);
-        double revenuMoyen = menages.stream().mapToDouble(m -> m.getRevenuMensuel() != null ? m.getRevenuMensuel() : 0.0).average().orElse(0.0);
+
 
         Map<String, Long> repartitionZone = menages.stream()
                 .collect(Collectors.groupingBy(Menage::getZone, Collectors.counting()));
@@ -100,7 +100,7 @@ public class MenageServiceImpl implements MenageService {
 
         // Seuil exemple : ménages avec un revenu inférieur à 100 000 FCFA
         long faibleRevenu = menages.stream()
-                .filter(m -> m.getRevenuMensuel() != null && m.getRevenuMensuel() < 100000.0)
+
                 .count();
 
         return StatistiquesDTO.builder()
@@ -108,7 +108,7 @@ public class MenageServiceImpl implements MenageService {
                 .totalPopulation(totalPopulation)
                 .tailleMoyenneMenage(Math.round(tailleMoyenne * 100.0) / 100.0)
                 .ageMoyenGlobal(Math.round(ageMoyenGlobal * 100.0) / 100.0)
-                .revenuMoyen(Math.round(revenuMoyen * 100.0) / 100.0)
+
                 .repartitionParZone(repartitionZone)
                 .repartitionParTypeLogement(repartitionLogement)
                 .menagesFaibleRevenu(faibleRevenu)

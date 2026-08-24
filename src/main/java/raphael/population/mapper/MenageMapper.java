@@ -21,7 +21,7 @@ public Menage toEntity(MenageRequestDTO dto){
             .ageMoyen(dto.getAgeMoyen())
             .nombrePersonnes(dto.getNombrePersonnes())
             .typeLogement(dto.getTypeLogement())
-            .revenuMensuel(dto.getRevenuMensuel())
+
             .build();
 
 }
@@ -41,7 +41,7 @@ public Menage toEntity(MenageRequestDTO dto){
                 .ageMoyen(entity.getAgeMoyen())
                 .nombrePersonnes(entity.getNombrePersonnes())
                 .typeLogement(entity.getTypeLogement())
-                .revenuMensuel(entity.getRevenuMensuel())
+
                 .createdAt(entity.getCreatedAt())
                 .updatedAt(entity.getUpdatedAt())
                 .build();

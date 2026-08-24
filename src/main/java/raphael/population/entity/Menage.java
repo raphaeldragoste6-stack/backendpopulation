@@ -72,10 +72,7 @@ private String typeLogement;
 
 
 
-//L'annotation @PositiveOrZero sert à vérifier qu'une valeur numérique est supérieure ou égale à zéro ($\ge 0$).
-@PositiveOrZero ( message = "Le revenu mensuel doit etre superieur ou égal à 0")
-@Column(name = "revenu_mensuel")
-private Double revenuMensuel;
+
 
 
 
