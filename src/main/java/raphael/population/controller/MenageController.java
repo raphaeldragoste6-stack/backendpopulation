@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/menages")
+@RequestMapping("/menages")
 
 //Autorise le backend à recevoir les reque
 @CrossOrigin(origins = "*") //  AJOUTE CETTE LIGNE
