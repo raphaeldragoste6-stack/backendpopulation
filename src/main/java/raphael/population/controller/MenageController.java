@@ -17,8 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/menages")
 
-//Autorise le backend à recevoir les reque
-@CrossOrigin(origins = "*") //  AJOUTE CETTE LIGNE
+
 
 
 public class MenageController {

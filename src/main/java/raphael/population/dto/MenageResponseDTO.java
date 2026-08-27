@@ -21,7 +21,7 @@ public class MenageResponseDTO {
     private Integer ageMoyen;
     private Integer nombrePersonnes;
     private String typeLogement;
-    private Double revenuMensuel;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
